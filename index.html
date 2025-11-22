@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salon lepote Cik Cak | Frizerske i kozmetičke usluge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Salon lepote Cik Cak – profesionalne usluge šišanja, farbanja, pramenova, tretmana kose i nege lepote."
+  />
+
+  <!-- Fontovi -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Ikonice (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    :root {
+      --bg: #fffdfd;
+      --bg-soft: #fff7fb;
+      --accent: #f38fb3;         /* pastel pink */
+      --accent-2: #8dd9c4;       /* pastel mint */
+      --accent-light: #ffe4f0;
+      --text: #2d2a32;
+      --muted: #8a8492;
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      --radius: 20px;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffe9f3, #f5fffb);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffe9f3, #f6fffb);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+      transition: 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn-primary,
+    .btn-outline {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 2px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f38fb3, #f8b3c8);
+      color: white;
+      box-shadow: 0 12px 26px rgba(239, 121, 157, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(239, 121, 157, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-light);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      padding: 3rem 0 2.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-highlight i {
+      font-size: 0.85rem;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      max-width: 30rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-meta {
+      color: var(--muted);
+      margin-top: 1.3rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-meta i {
+      color: var(--accent);
+    }
+
+    .hero-photo-wrapper {
+      position: relative;
+    }
+
+    .hero-main-photo {
+      border-radius: 28px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+      object-fit: cover;
+      height: 100%;
+      min-height: 260px;
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 1.1rem;
+      left: 1.1rem;
+      background: rgba(255, 255, 255, 0.94);
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-tag-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent-2);
+      border-radius: 50%;
+    }
+
+    section {
+      padding: 2.7rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto;
+      font-size: 0.9rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, #ffe4f0 0, transparent 55%);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .card-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    .card-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+      background: rgba(248, 208, 223, 0.7);
+      color: #c74c7c;
+      font-size: 0.9rem;
+    }
+
+    .card:nth-child(2) .card-icon {
+      background: rgba(200, 236, 227, 0.8);
+      color: #3c8b74;
+    }
+
+    .card:nth-child(3) .card-icon {
+      background: rgba(222, 226, 255, 0.9);
+      color: #4b55c4;
+    }
+
+    .card:nth-child(4) .card-icon {
+      background: rgba(255, 233, 207, 0.9);
+      color: #c47b36;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .about-list {
+      margin-top: 0.5rem;
+      list-style: none;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .bullet {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-2);
+      border-radius: 999px;
+    }
+
+    .about img {
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2.1rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.7rem;
+    }
+
+    .social-pill {
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      padding: 0.45rem 0.95rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      transition: 0.15s ease;
+    }
+
+    .social-pill i {
+      font-size: 0.9rem;
+    }
+
+    .social-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .map-link i {
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.8);
+      padding: 1.4rem 0 1.8rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-wrapper {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Salon lepote Cik Cak</div>
+        <div class="nav-links">
+          <a href="#services">Usluge</a>
+          <a href="#gallery">Galerija</a>
+          <a href="#about">O nama</a>
+          <a href="#contact">Kontakt</a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <div>
+          <div class="hero-highlight">
+            <i class="fa-solid fa-sparkles"></i>
+            Frizure · Boja · Nega
+          </div>
+          <h1 class="hero-title">Moderne frizure, zdrava kosa i prijatna atmosfera.</h1>
+          <p class="hero-text">
+            Salon lepote Cik Cak je savremeni frizersko–kozmetički studio koji nudi profesionalno šišanje,
+            farbanje, pramenove, balayage, feniranje i tretmane – sve prilagođeno tvojoj kosi i stilu.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://wa.me/381601234567" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+              Zakaži termin
+            </a>
+            <a class="btn-outline" href="#services">
+              <i class="fa-solid fa-list-ul"></i>
+              Usluge i cene
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span><i class="fa-solid fa-star"></i> Ocena 4.9 / 5</span>
+            <span><i class="fa-regular fa-clock"></i> Pon–Sub</span>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrapper">
+          <img
+            src="images/salon-main.jpg"
+            alt="Salon lepote Cik Cak – unutrašnjost"
+            class="hero-main-photo"
+          />
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            <span>Lepa kosa svakog dana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- USLUGE -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Usluge</div>
+          <h2 class="section-title">Naše usluge</h2>
+          <p class="section-subtitle">
+            Kvalitetni proizvodi, profesionalna usluga i uvek iskren savet za svaki tip kose.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3>Šišanje i feniranje</h3>
+            <p>Profesionalno šišanje, stilizovanje i konsultacija prema obliku lica i tipu kose.</p>
+            <div class="card-price">Od 2000 RSD</div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-brush"></i>
+            </div>
+            <h3>Farbanje, pramenovi i balayage</h3>
+            <p>Farbanje, izrastak, pramenovi i balayage sa nežnim i kvalitetnim farbama.</p>
+            <div class="card-price">Od 3500 RSD</div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <h3>Tretmani za kosu</h3>
+            <p>Dubinska nega, hidratacija i obnova oštećene, suve ili blajhane kose.</p>
+            <div class="card-price">Od 1800 RSD</div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <h3>Svečane frizure i stilizovanje</h3>
+            <p>Svečane punđe, lokne, fen frizure i stilizovanje za posebne događaje.</p>
+            <div class="card-price">Od 2500 RSD</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIJA -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Galerija</div>
+          <h2 class="section-title">Pre i posle</h2>
+          <p class="section-subtitle">
+            Pogledaj neke od naših radova – još više fotografija objavljujemo na Instagramu.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="images/hair1.jpg" alt="Balayage frizura" />
+          <img src="images/hair2.jpg" alt="Kratka frizura" />
+          <img src="images/hair3.jpg" alt="Kovrdžanje kose" />
+          <img src="images/hair4.jpg" alt="Pramenovi" />
+        </div>
+      </div>
+    </section>
+
+    <!-- O NAMA -->
+    <section id="about">
+      <div class="container">
+        <div class="about">
+          <div class="about-text">
+            <div class="section-tag">O nama</div>
+            <h2 class="section-title">Naš pristup lepoti</h2>
+
+            <p>
+              U Salonu lepote Cik Cak negujemo pristup koji kombinuje profesionalnu tehniku,
+              opuštenu atmosferu i individualni rad sa svakim klijentom.
+            </p>
+            <p>
+              Naš cilj je da se osećaš posebno — bilo da dolaziš na šišanje, farbanje, tretman ili stilizovanje
+              za posebnu priliku. Zajedno nalazimo frizuru koja ti najbolje pristaje.
+            </p>
+
+            <ul class="about-list">
+              <li><span class="bullet"></span> Preko 10 godina iskustva</li>
+              <li><span class="bullet"></span> Profesionalni proizvodi i pažnja prema zdravlju kose</li>
+              <li><span class="bullet"></span> Prijatan, prijateljski pristup i bez žurbe</li>
+            </ul>
+          </div>
+
+          <div>
+            <img src="images/team-or-interior.jpg" alt="Unutrašnjost salona Cik Cak" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Kontakt</div>
+          <h2 class="section-title">Pronađi nas i zakaži</h2>
+          <p class="section-subtitle">
+            Pozovi nas, pošalji poruku preko WhatsApp-a ili nam piši na društvenim mrežama.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <h3>Kontakt podaci</h3>
+
+            <ul class="contact-list">
+              <li><strong>Adresa:</strong> Primer ulica 12, Beograd</li>
+              <li><strong>Telefon:</strong> +381 60 123 4567</li>
+              <li><strong>Email:</strong> cikcak@salon.com</li>
+              <li><strong>Radno vreme:</strong> Pon–Pet 09–20h, Subota 09–15h</li>
+            </ul>
+
+            <h4 style="margin-top: 1rem; font-size: 0.95rem;">Društvene mreže</h4>
+            <div class="social-links">
+              <!-- Instagram #1 -->
+              <a
+                class="social-pill"
+                href="https://instagram.com/instagram_profil_1"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+                Instagram profil 1
+              </a>
+
+              <!-- Instagram #2 -->
+              <a
+                class="social-pill"
+                href="https://instagram.com/instagram_profil_2"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+                Instagram profil 2
+              </a>
+
+              <!-- Facebook -->
+              <a
+                class="social-pill"
+                href="https://facebook.com/facebook_stranica"
+                target="_blank"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+                Facebook stranica
+              </a>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <strong>Kako do nas</strong>
+            <p>
+              Nalazimo se u mirnoj ulici, lako dostupni javnim prevozom. Parking je dostupan u okolini.
+            </p>
+            <a
+              class="map-link"
+              href="https://maps.google.com"
+              target="_blank"
+            >
+              <i class="fa-solid fa-location-dot"></i>
+              Otvori u Google Mapama
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Salon lepote Cik Cak. Sva prava zadržana.</div>
+      <div>Sa ljubavlju za lepu kosu 💖</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
